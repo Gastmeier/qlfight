@@ -43,7 +43,7 @@ public class PlayerManager {
             return player;
         }
 
-        int elo = INITIAL_ELO;
+        Integer elo = null;
 
         QlRanksService.GameType ranksGameType = QlRanksService.GameType.fromQl(gameType);
         if (ranksGameType != null) {
@@ -52,6 +52,9 @@ public class PlayerManager {
         else {
             log.info("No QlRanks elo available for game type: {}", gameType.name);
         }
+
+        if (elo == null)
+            elo = INITIAL_ELO;
 
         PlayerGameType playerGameType = new PlayerGameType(gameType);
         playerGameType.elo(elo);

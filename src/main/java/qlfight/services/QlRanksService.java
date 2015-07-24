@@ -55,6 +55,9 @@ public class QlRanksService {
                 log.error("Could not parse elo value: {}", raw);
             }
         }
+        else {
+            log.info("Regular expression matcher could not find any elo value.");
+        }
 
         return elo;
     }

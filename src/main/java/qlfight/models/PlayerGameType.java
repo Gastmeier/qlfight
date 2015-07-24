@@ -10,17 +10,17 @@ public class PlayerGameType {
     public static final String JP_ELO = "elo";
 
     public final GameType gameType;
-    private int elo;
+    private Integer elo;
 
     public PlayerGameType(GameType gameType) {
         this.gameType = gameType;
     }
 
-    public int elo() {
+    public Integer elo() {
         return elo;
     }
 
-    public void elo(int elo) {
+    public void elo(Integer elo) {
         this.elo = elo;
     }
 

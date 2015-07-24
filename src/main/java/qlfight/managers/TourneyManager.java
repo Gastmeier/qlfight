@@ -91,30 +91,10 @@ public class TourneyManager {
             playerManager.initGameType(registered, gameType);
         }
 
+        currentPlayers.clear();
+        currentPlayers.add("starku");
         for (String unregistered : currentPlayers) {
             Player registered = playerManager.register(unregistered);
-//            Player player = playerManager.register(unregistered);
-//            log.info("Initializing game type '{}' for player: {}", gameType.name, player);
-//            if (player.gameType(gameType) != null) {
-//                log.info("Game type already initialized, exiting.");
-//                continue;
-//            }
-//
-//            int elo = 1200;
-//
-//            QlRanksService.GameType ranksGameType = QlRanksService.GameType.fromQl(gameType);
-//            if (ranksGameType != null) {
-//                elo = qlRanks.elo(ranksGameType, player.name);
-//            }
-//            else {
-//                log.info("No QlRanks elo available for game type: {}", gameType.name);
-//            }
-//
-//            PlayerGameType playerGameType = new PlayerGameType(gameType);
-//            playerGameType.elo(elo);
-//            player.gameTypes.add(playerGameType);
-//            playerDao.addGameType(player, playerGameType);
-//            registeredPlayers.add(player);
             registered = playerManager.initGameType(registered, gameType);
             registeredPlayers.add(registered);
         }
